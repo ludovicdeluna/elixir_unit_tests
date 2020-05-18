@@ -30,10 +30,16 @@ mix local.hex --force
 Configure your database and check it is up and accessible. Report the
 settings in the file bellow:
 
-- config/config.exs
+- config/test.exs
 
 Details required are `username`, `password` and `hostname`. If you run
 an unusual port, add `port` entry.
+
+Set your mix env as bellow:
+
+```shell
+export MIX_ENV=test
+```
 
 ## Get dependancies
 
