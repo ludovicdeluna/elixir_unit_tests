@@ -7,5 +7,8 @@ RUN apk update && \
     mix local.rebar && \
     mix local.hex --force
 
+
 WORKDIR /app
 ENTRYPOINT su - postgres -c "pg_ctl start -D /var/lib/postgresql/data" && /bin/sh
+
+ENV MIX_ENV test

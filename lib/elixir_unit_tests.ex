@@ -8,11 +8,15 @@ defmodule ElixirUnitTests do
 
   ## Examples
 
-      iex> ElixirUnitTests.hello()
-      :world
+      iex> ElixirUnitTests.hello(%{1 => %ElixirUnitTests.User{name: "Alan"}}, 1)
+      "Hello Alan !"
 
   """
-  def hello do
-    :world
+  def hello(users, id) when id == 1000 do
+    "Hello #{users[id].name} ! Congratulations !"
+  end
+
+  def hello(users, id) do
+    "Hello #{users[id].name} !"
   end
 end

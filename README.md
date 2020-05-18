@@ -1,5 +1,8 @@
 # ElixirUnitTests
 
+Material used for a blog post about tests in Elixir. The final URL (in french)
+will be shown here when the post landed on our blog.
+
 ## Requirements
 
 - Elixir (1.10)
@@ -11,7 +14,10 @@ or
 
 ## Installation
 
-Go directly to the next section if you run within a Docker image.
+All instructions are for Unix compliant system, including MacOS.
+
+Go directly to the section **[Get dependencies](#get-dependancies)** if you run
+within a [Docker image](#docker).
 
 For a fresh installation, we need rebar and hex. If not already done, run
 the commands bellow once:
@@ -31,29 +37,26 @@ an unusual port, add `port` entry.
 
 ## Get dependancies
 
-You have to get dependencies the first time you play.
+You have to get dependencies the first time you play:
 
 ```
-mix deps
-mix deps.compile
+mix deps.get
 ```
 
-## Database setup
+## Run the test
 
-Create the DB schema:
-
-```
-mix ecto.create
-```
-
-Run the migration once:
+This project is configured to launch db create & migrations before the test run:
 
 ```
-mix ecto.migrate
+mix test
 ```
 
-Info: use `ecto.drop` to remove the schema created when you have finished to
-play.
+> Code is compiled to bytecode for BEAM VM the first time and when the source
+> code is changed.
+
+The blog post is about the organisation of test explained in the file
+[test/elixir_unit_tests_test.exs](test/elixir_unit_tests_test.exs) ; blog post
+written in french for now.
 
 ## Docker
 

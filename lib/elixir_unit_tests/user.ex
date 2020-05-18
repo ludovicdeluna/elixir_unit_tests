@@ -5,5 +5,6 @@ defmodule ElixirUnitTests.User do
     field(:regnum, :integer)
     field(:name, :string)
     field(:city, :string)
+    timestamps()
   end
 end
