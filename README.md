@@ -1,45 +1,52 @@
 # ElixirUnitTests
 
-Material used for a blog post about tests in Elixir. The final URL (in french)
-will be shown here when the post landed on our blog.
+Hello. This Github repository contain material for a blog post about test unit
+on Elixir. The final URL of the blog post will be shown bellow when ready.
 
 ## Requirements
 
+- Git
 - Elixir (1.10)
 - Postgresql (with a database up)
 
 or
 
+- Git
 - Docker (see Docker section)
+
+This readme file will not show you how install [Elixir] or [Docker].
 
 ## Installation
 
 All instructions are for Unix compliant system, including MacOS.
 
-Go directly to the section **[Get dependencies](#get-dependancies)** if you run
-within a [Docker image](#docker).
+Step 1: Fetch this project, all commands are run within the project folder:
 
-For a fresh installation, we need rebar and hex. If not already done, run
-the commands bellow once:
+```shell
+git clone https://github.com/ludovicdeluna/elixir_unit_tests.git
+cd elixir_unit_tests
+```
+
+Step 2: Prepare your environment. Go directly to the next section (**[Get
+dependencies](#get-dependancies)**) if you run within a [Docker image](#docker).
 
 ```shell
 mix local.rebar
 mix local.hex --force
 ```
 
-Configure your database and check it is up and accessible. Report the
-settings in the file bellow:
+Step 3: Configure your database. Details required are `username`, `password` and
+`hostname`. If you run an unusual port, add `port` entry.
 
-- config/test.exs
+> The file to edit is: **config/test.exs**
 
-Details required are `username`, `password` and `hostname`. If you run
-an unusual port, add `port` entry.
-
-Set your mix env as bellow:
+Step 4: Set your runtime elixir for TEST purpose:
 
 ```shell
 export MIX_ENV=test
 ```
+
+Your are now ready for the next part.
 
 ## Get dependancies
 
@@ -66,9 +73,10 @@ written in french for now.
 
 ## Docker
 
-If your operating system is Windows or MacOS, be sure you have switched the
-Docker to Linux mode (within a virtual machine). The image provided is Linux
-only.
+If your operating system is Windows or MacOS, be sure you have switched Docker
+to use the Linux mode (within a virtual machine). The image provided is Linux
+only. The image you will build contain an Alpine distribution of Elixir 1.10
+with a functional Postgresql.
 
 To run the image, you have the choose between docker-compose or plain docker
 commands.
@@ -101,3 +109,6 @@ server started
 
 You are now ready to follow the blog post. To quit the shell, type `exit` or
 `\d`.
+
+[Elixir]: https://elixir-lang.org/install.html
+[Docker]: https://docs.docker.com/develop/
