@@ -30,11 +30,11 @@ defmodule ElixirUnitTestsTest do
 
     # Helpers for ElixirUnitTests.hello/2
 
-    defp load_fixtures(%{congratulate: true} = context),
-      do: build_users(context[:user], 1000)
+    defp load_fixtures(%{user: user, congratulate: true} = _context),
+      do: build_users(user, 1000)
 
-    defp load_fixtures(context),
-      do: build_users(context[:user], 1)
+    defp load_fixtures(%{user: user} = _context),
+      do: build_users(user, 1)
 
     def build_users(attributes, id) do
       [
