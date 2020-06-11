@@ -138,6 +138,6 @@ want to quit the container.
 
 [Elixir]: https://elixir-lang.org/install.html
 [Docker]: https://docs.docker.com/develop/
-[blog]: https://www.synbioz.com
+[blog]: https://www.synbioz.com/blog/tech/pilotez-vos-tests-elixir-avec-des-scenarios
 [testfile]: https://github.com/ludovicdeluna/elixir_unit_tests/blob/master/test/elixir_unit_tests_test.exs
 [zip]: https://github.com/ludovicdeluna/elixir_unit_tests/archive/master.zip
